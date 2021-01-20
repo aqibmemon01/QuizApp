@@ -12,3 +12,7 @@ export type questionType = {
     answer:string
     option:string[]
 }
+export type questionPropsType = {
+    question:string
+    option:string[]
+}

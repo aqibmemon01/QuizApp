@@ -26,7 +26,7 @@ let [quiz, setquiz] = useState<questionType[]>([]);
 if(!quiz.length){
   return(<h3>Loadingg</h3>)
 }
-
+console.log(quiz[0])
   return (
   <div className="App">
    <QuestionCard 

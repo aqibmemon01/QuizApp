@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {getQuizDetails} from './Services/quiz_service';
-import {Quiz} from './Types/quiz_Types'
+import {questionType,Quiz} from './Types/quiz_Types';
+import QuestionCard from './Components/QuestionCard'
 
 function App() {
 
-let [quiz, setquiz] = useState<Quiz[]>([]);
+let [quiz, setquiz] = useState<questionType[]>([]);
 
  useEffect(()=>{
 
@@ -22,9 +23,16 @@ let [quiz, setquiz] = useState<Quiz[]>([]);
 
 
 
+if(!quiz.length){
+  return(<h3>Loadingg</h3>)
+}
 
   return (
   <div className="App">
+   <QuestionCard 
+    option={quiz[0].option}
+    question={quiz[0].question}
+   />
 
   </div>
   );

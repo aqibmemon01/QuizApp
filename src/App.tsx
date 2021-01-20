@@ -8,6 +8,7 @@ import QuestionCard from './Components/QuestionCard'
 function App() {
 
 let [quiz, setquiz] = useState<questionType[]>([]);
+let [CurrentStep, setCurrentStep] = useState(0);
 
  useEffect(()=>{
 
@@ -20,7 +21,9 @@ let [quiz, setquiz] = useState<questionType[]>([]);
    getData()
  },[])
 
+const handleSubmit = () =>{
 
+}
 
 
 if(!quiz.length){
@@ -30,8 +33,9 @@ console.log(quiz[0])
   return (
   <div className="App">
    <QuestionCard 
-    option={quiz[0].option}
-    question={quiz[0].question}
+    option={quiz[CurrentStep].option}
+    question={quiz[CurrentStep].question}
+    callBack={handleSubmit}
    />
 
   </div>

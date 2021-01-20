@@ -15,4 +15,5 @@ export type questionType = {
 export type questionPropsType = {
     question:string
     option:string[]
+    callBack:()=>void
 }

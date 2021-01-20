@@ -1,17 +1,14 @@
 import React from "react";
 import {questionPropsType} from '../Types/quiz_Types'
 
-const QuestionCard : React.FC<questionPropsType> = ({
-    question,
-    option
-}) => {
+const QuestionCard : React.FC<questionPropsType> = ({question,option,callBack}) => {
   return(
       <div>
     <h1>Hellow</h1>
 
     <div>{question}</div>
   
-    <form>
+    <form onSubmit={callBack} >
         
         {
             option.map((val:string, index:number)=>{

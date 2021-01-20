@@ -1,25 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {getQuizDetails} from './Services/quiz_service';
+import {Quiz} from './Types/quiz_Types'
 
 function App() {
+
+let [quiz, setquiz] = useState<Quiz[]>([]);
+
+ useEffect(()=>{
+
+   async function getData() {
+     const questions = await getQuizDetails(15,"easy")
+      setquiz(questions)
+       console.log(questions)
+   }
+
+   getData()
+ },[])
+
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className="App">
+
+  </div>
   );
 }
 

@@ -13,7 +13,7 @@ let [CurrentStep, setCurrentStep] = useState(0);
  useEffect(()=>{
 
    async function getData() {
-     const questions = await getQuizDetails(15,"easy")
+     const questions = await getQuizDetails(5,"easy")
       setquiz(questions)
        console.log(questions)
    }
@@ -21,7 +21,10 @@ let [CurrentStep, setCurrentStep] = useState(0);
    getData()
  },[])
 
-const handleSubmit = () =>{
+const handleSubmit = (e:React.FormEvent<EventTarget>) =>{
+   e.preventDefault();
+   if(CurrentStep !== quiz.length-1)
+   setCurrentStep(++CurrentStep)
 
 }
 

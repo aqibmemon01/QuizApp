@@ -21,7 +21,8 @@ let [CurrentStep, setCurrentStep] = useState(0);
    getData()
  },[])
 
-const handleSubmit = (e:React.FormEvent<EventTarget>) =>{
+const handleSubmit = (e:React.FormEvent<EventTarget>,Ans:string) =>{
+  console.log(Ans)
    e.preventDefault();
    if(CurrentStep !== quiz.length-1)
    setCurrentStep(++CurrentStep)

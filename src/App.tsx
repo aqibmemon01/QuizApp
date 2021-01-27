@@ -9,6 +9,7 @@ function App() {
 
 let [quiz, setquiz] = useState<questionType[]>([]);
 let [CurrentStep, setCurrentStep] = useState(0);
+let [CurrentScore, setCurrentScore] = useState(0);
 
  useEffect(()=>{
 
@@ -24,9 +25,16 @@ let [CurrentStep, setCurrentStep] = useState(0);
 const handleSubmit = (e:React.FormEvent<EventTarget>,Ans:string) =>{
   console.log(Ans)
    e.preventDefault();
-   if(CurrentStep !== quiz.length-1)
+   if(CurrentStep !== quiz.length-1){
    setCurrentStep(++CurrentStep)
-
+   console.log("Currect Answer is " + quiz[(CurrentStep-1)].answer + " & Your Answer is " + Ans )
+     if(Ans===quiz[(CurrentStep-1)].answer){
+       setCurrentScore(++CurrentScore)
+     }
+  }
+  else{
+    alert("Completed")
+  }
 }
 
 
@@ -36,6 +44,7 @@ if(!quiz.length){
 console.log(quiz[0])
   return (
   <div className="App">
+    <h3>Score{CurrentScore}</h3>
    <QuestionCard 
     option={quiz[CurrentStep].option}
     question={quiz[CurrentStep].question}

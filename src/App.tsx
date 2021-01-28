@@ -8,6 +8,25 @@ function App(){
       <div className="Main" >
     <div className="QuizHead" >Quiz App</div>
 
+    <div>
+
+    <div>
+      Art and Literature
+    </div>
+    <div>
+      General Knowledge
+    </div>
+    <div>
+      Science & Nature
+    </div>
+    <div>
+      Technology
+    </div>
+
+
+    </div>
+
+<button>START QUIZ</button>
 
 
     

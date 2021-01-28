@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {questionPropsType} from '../Types/quiz_Types';
-import '../App.css';
+// import '../App.css';
 
 
 const QuestionCard : React.FC<questionPropsType> = ({question,option,callBack}) => {
@@ -17,7 +17,7 @@ const QuestionCard : React.FC<questionPropsType> = ({question,option,callBack}) 
       <div>
     <h1>Quiz App</h1>
 
-    <div>{question}</div>
+    <div dangerouslySetInnerHTML={{__html: question}}>{}</div>    
   
     <form onSubmit={(e:React.FormEvent<EventTarget>)=>callBack(e,selectedAnswer)} >
         

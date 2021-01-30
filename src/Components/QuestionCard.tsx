@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {questionPropsType} from '../Types/quiz_Types';
-// import '../App.css';
+import '../QuizCard.css';
+
 
 
 const QuestionCard : React.FC<questionPropsType> = ({question,option,callBack}) => {
@@ -15,8 +16,7 @@ const QuestionCard : React.FC<questionPropsType> = ({question,option,callBack}) 
 
   return(
       <div>
-    <h1>Quiz App</h1>
-
+    
     <div dangerouslySetInnerHTML={{__html: question}}>{}</div>    
   
     <form onSubmit={(e:React.FormEvent<EventTarget>)=>callBack(e,selectedAnswer)} >
@@ -25,13 +25,17 @@ const QuestionCard : React.FC<questionPropsType> = ({question,option,callBack}) 
             option.map((val:string, index:number)=>{
                 return(
                 <div key={index} >
-                <label >
-                    <input type="radio" value={val} 
+                     <input type="radio" value={val} 
+                     id={"opt"+index}
                     name="option"
                     required
                     checked={selectedAnswer===val}
                     onChange={handleSelection} />
-                    {val}
+                <label
+                htmlFor={"opt"+index}
+                 >
+                    <span> (A) </span>
+                     {val}
                 </label>
                 </div>
                  )

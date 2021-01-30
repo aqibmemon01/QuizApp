@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import QuizApp from "./Home";
 import './App.css';
 
 
@@ -6,9 +7,13 @@ function App(){
 
   return(
       <div className="Main" >
-    <div className="QuizHead" >Quiz App</div>
+    {/* <div className="QuizHead" >Quiz App</div>
 
-    <div>
+    <div className="SelectQuizBtn" >
+      Select Quiz
+    </div>
+
+    <div className="SelectBox" >
 
     <div>
       Art and Literature
@@ -22,14 +27,17 @@ function App(){
     <div>
       Technology
     </div>
-
-
+    <div>
+      Sports
     </div>
-
-<button>START QUIZ</button>
-
-
+    <div>
+      Information Technology
+    </div>
     
+
+    </div> */}
+
+<QuizApp />
 
       </div>
   )

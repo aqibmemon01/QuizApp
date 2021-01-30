@@ -8,7 +8,7 @@
     margin-top: 50px;
 }
 .QuizHead{
-    color: #e68230;
+    color: rgb(209, 209, 209);
     text-align: center;
     font-size: 30px;
     padding-top: 10px;
@@ -18,7 +18,41 @@
     box-shadow: 0px 5px 10px black;
     /* width: 80%; */
 }
-
+.SelectBox{
+    width: 90%;
+    margin: auto;
+    overflow-y: scroll;
+    height: 325px;
+    /* margin-top: 30px; */
+}
+.SelectBox::-webkit-scrollbar{
+    display: none;
+}
+.SelectQuizBtn{
+    background-color:  #e68230;
+    color: white;
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+.SelectBox > div{
+    background-color: #2f445b;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+.SelectBox > div:active{
+background-color:  #e68230;
+}
 body{
     background-color: #0f162e;
    }

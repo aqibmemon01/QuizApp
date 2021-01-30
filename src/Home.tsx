@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './QuizCard.css';
 import {getQuizDetails} from './Services/quiz_service';
 import {questionType,Quiz} from './Types/quiz_Types';
 import QuestionCard from './Components/QuestionCard'
@@ -44,7 +44,7 @@ if(!quiz.length){
 }
 console.log(quiz[0])
   return (
-  <div className="App">
+  <div className="CardMain">
     <h3>Score{CurrentScore}</h3>
    <QuestionCard 
     option={quiz[CurrentStep].option}

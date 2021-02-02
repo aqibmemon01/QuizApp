@@ -5,16 +5,17 @@ import {getQuizDetails} from './Services/quiz_service';
 import {questionType,Quiz} from './Types/quiz_Types';
 import QuestionCard from './Components/QuestionCard'
 
-function App() {
+function App(props:any) {
 
 let [quiz, setquiz] = useState<questionType[]>([]);
 let [CurrentStep, setCurrentStep] = useState(0);
 let [CurrentScore, setCurrentScore] = useState(0);
 
+
  useEffect(()=>{
 
    async function getData() {
-     const questions = await getQuizDetails(5,"easy")
+     const questions = await getQuizDetails(15,"easy",props.QuizType)
      
       setquiz(questions)
        console.log(questions)
@@ -40,18 +41,20 @@ const handleSubmit = (e:React.FormEvent<EventTarget>,Ans:string) =>{
 
 
 if(!quiz.length){
-  return(<h3>Loadingg</h3>)
+  return(<h3 style={{textAlign:"center", marginTop:"250px", color:"white"}} >Loadingg</h3>)
 }
 console.log(quiz[0])
   return (
   <div className="CardMain">
-    <h3>Score{CurrentScore}</h3>
+    <div>
+    <h3 className="ScoreBoard">Score {CurrentScore}</h3>
+    <h5 style={{textAlign:"center"}} >{CurrentStep+1 + " of " + quiz.length}</h5>
    <QuestionCard 
     option={quiz[CurrentStep].option}
     question={quiz[CurrentStep].question}
     callBack={handleSubmit}
    />
-
+</div>
   </div>
   );
 }

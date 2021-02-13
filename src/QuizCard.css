@@ -81,3 +81,29 @@ button{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.ResultDiv{
+    width: 90%;
+    height: 350px;
+    border-radius: 25px;
+    margin: 30% auto 0 auto;
+    background-color: #bbd3da;
+    text-align: center;
+}
+.ResultDiv > img{
+    width: 150px;
+}
+.ResultDiv > h2{
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.ResultDiv > h1{
+    margin-top: 0;
+}
+.ResultDiv > p{
+    color: black;
+    font-weight: 700;
+    margin-top: 0;
+    width: 90%;
+    margin: auto;
+}

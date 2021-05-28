@@ -8,6 +8,32 @@ function App(){
 
 let [SelectedQuiz, setSelectedQuiz] = useState(0);
 
+function displayNotification() {
+  if (Notification.permission == 'granted') {
+    navigator.serviceWorker.getRegistration().then(function(reg:any) {
+      var options = {
+        body: 'Here is a notification body!',
+        icon: 'images/example.png',
+        vibrate: [100, 50, 100],
+        data: {
+          dateOfArrival: Date.now(),
+          primaryKey: 1
+        },
+        actions: [
+          {action: 'explore', title: 'Explore this new world',
+            icon: 'Back.jpg'},
+          {action: 'close', title: 'Close notification',
+            icon: 'logo.svg'},
+        ]
+      };
+      reg.showNotification('Hello world!', options);
+    });
+  }
+}
+displayNotification()
+
+
+
 if(SelectedQuiz != 0){
   return(
       <div className="Main" >

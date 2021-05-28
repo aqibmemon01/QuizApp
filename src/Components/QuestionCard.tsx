@@ -13,8 +13,7 @@ const QuestionCard : React.FC<questionPropsType> = ({question,option,callBack}) 
     }
     const TagArr = ["A","B","C","D",]
 
-
-
+    
   return(
       <div>
     <div dangerouslySetInnerHTML={{__html: question}} className="Questiondiv" ></div>    

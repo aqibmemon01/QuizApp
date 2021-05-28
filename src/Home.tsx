@@ -12,6 +12,8 @@ let [CurrentStep, setCurrentStep] = useState(0);
 let [CurrentScore, setCurrentScore] = useState(0);
 
 
+
+
  useEffect(()=>{
 
    async function getData() {
@@ -25,6 +27,11 @@ let [CurrentScore, setCurrentScore] = useState(0);
  },[])
 
 const handleSubmit = (e:React.FormEvent<EventTarget>,Ans:string) =>{
+
+
+  
+
+
   console.log(Ans)
    e.preventDefault();
    if(CurrentStep !== quiz.length-1){
